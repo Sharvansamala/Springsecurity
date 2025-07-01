@@ -20,7 +20,7 @@ public class PostController {
     }
 
     @GetMapping("/{id}")
-    public PostDTO getPostById(Long id) {
+    public PostDTO getPostById(@PathVariable Long id) {
         return postService.getPostById(id);
     }
 
