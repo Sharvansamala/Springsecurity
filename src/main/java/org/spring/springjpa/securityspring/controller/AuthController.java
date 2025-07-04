@@ -29,7 +29,8 @@ public class AuthController {
     private final AuthService authService;
 
     @Value("${spring.security.secure}")
-    private boolean isProduction; // Set this based on your environment
+    private String secure; // Set this based on your environment
+    private final boolean isProduction = Boolean.parseBoolean(secure);
 
     @PostMapping("/signup")
     public ResponseEntity<UserDto> signUp(@RequestBody SignUpDto signUpDto) {
